@@ -1,0 +1,20 @@
++--------------------------------------+-------------+-----------+-----------+------------+-----------+--------------------------------------+----------------------+--------------------------------------+
+| ID                                   | IP Protocol | Ethertype | IP Range  | Port Range | Direction | Remote Security Group                | Remote Address Group | Security Group                       |
++--------------------------------------+-------------+-----------+-----------+------------+-----------+--------------------------------------+----------------------+--------------------------------------+
+| 006415d3-0760-40a4-8c8f-d134acd4b75e | None        | IPv4      | 0.0.0.0/0 |            | egress    | None                                 | None                 | 40e97902-5cea-469b-8b45-ea287c4c19dc |
+| 115296ef-8c34-4dc8-a152-be56bd72d179 | None        | IPv6      | ::/0      |            | ingress   | 9ed20c2d-e578-4b97-9710-9cc68e514f52 | None                 | 9ed20c2d-e578-4b97-9710-9cc68e514f52 |
+| 2961e1ff-91c1-4f08-8ce0-9cd10c665332 | tcp         | IPv4      | 0.0.0.0/0 | 22:22      | ingress   | None                                 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| 2f951ff7-ebc8-4375-9d1a-aa64ded24b1b | None        | IPv6      | ::/0      |            | egress    | None                                 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| 60f28fdf-96e1-4203-bc4b-b7174d793895 | None        | IPv6      | ::/0      |            | egress    | None                                 | None                 | 40e97902-5cea-469b-8b45-ea287c4c19dc |
+| 6174dc92-ef8c-4b71-9a9d-4942e18eaeff | None        | IPv4      | 0.0.0.0/0 |            | ingress   | 40e97902-5cea-469b-8b45-ea287c4c19dc | None                 | 40e97902-5cea-469b-8b45-ea287c4c19dc |
+| 67c43f64-a577-4ec1-a8f7-638d926fe325 | None        | IPv6      | ::/0      |            | ingress   | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| 8c3cb931-c4c5-496f-97c4-2f775e771df2 | tcp         | IPv4      | 0.0.0.0/0 | 3000:3000  | ingress   | None                                 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| a1fb224f-94ee-4729-9f95-c4d38c137e0c | None        | IPv6      | ::/0      |            | ingress   | 40e97902-5cea-469b-8b45-ea287c4c19dc | None                 | 40e97902-5cea-469b-8b45-ea287c4c19dc |
+| a52e6fc2-f675-4773-a940-b5be755f5e28 | None        | IPv4      | 0.0.0.0/0 |            | ingress   | 9ed20c2d-e578-4b97-9710-9cc68e514f52 | None                 | 9ed20c2d-e578-4b97-9710-9cc68e514f52 |
+| b374cd7e-cfee-4f18-9237-dd32cbe9b77a | icmp        | IPv4      | 0.0.0.0/0 |            | ingress   | None                                 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| c07f4701-a439-4512-9799-1d88f8a68a43 | tcp         | IPv4      | 0.0.0.0/0 | 8080:8080  | ingress   | None                                 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| d01dc912-b8b6-45ef-82eb-103cc487c2d5 | None        | IPv4      | 0.0.0.0/0 |            | ingress   | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| e6a4a04a-4ba4-4e1c-b9d1-1048e3b19b91 | None        | IPv4      | 0.0.0.0/0 |            | egress    | None                                 | None                 | 9ed20c2d-e578-4b97-9710-9cc68e514f52 |
+| f16bf172-7276-458e-afd1-b0af9fa923b5 | None        | IPv4      | 0.0.0.0/0 |            | egress    | None                                 | None                 | 5752aa80-8e49-4767-9eef-6c319fc3d8c2 |
+| f7d72daf-60a2-4ba7-8b91-a1d5bd6f1225 | None        | IPv6      | ::/0      |            | egress    | None                                 | None                 | 9ed20c2d-e578-4b97-9710-9cc68e514f52 |
++--------------------------------------+-------------+-----------+-----------+------------+-----------+--------------------------------------+----------------------+--------------------------------------+

@@ -1,0 +1,9 @@
+Chassis "8e56b0f1-15ef-43ef-87aa-93486e13585c"
+    hostname: openstack-lab2
+    Encap geneve
+        ip: "192.168.1.178"
+        options: {csum="true"}
+    Port_Binding "94b09553-6ed7-415d-a235-cef6c826192a"
+    Port_Binding cr-lrp-4dfa287e-47d9-4073-8db3-ceca8e27615d
+    Port_Binding "806c9557-de0e-4d9a-9f12-21066d34a88b"
+    Port_Binding "d4f9a647-2ff9-4ca7-8a69-2796a119fb22"
