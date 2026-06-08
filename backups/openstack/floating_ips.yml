@@ -1,0 +1,18 @@
+- Fixed IP Address: 10.20.20.211
+  Floating IP Address: 192.168.1.238
+  Floating Network: 5676241d-6d83-40e8-9f53-36a8d196da13
+  ID: 165a4fd2-938c-448e-9bb3-51efb16646ee
+  Port: d4f9a647-2ff9-4ca7-8a69-2796a119fb22
+  Project: 87d22552e66446f8af89b52392e4e586
+- Fixed IP Address: 10.20.20.18
+  Floating IP Address: 192.168.1.237
+  Floating Network: 5676241d-6d83-40e8-9f53-36a8d196da13
+  ID: 2d61d833-55e4-42f3-a196-430feea964c1
+  Port: 35526a6e-ffc1-4823-8785-bcf065c7fa14
+  Project: 87d22552e66446f8af89b52392e4e586
+- Fixed IP Address: null
+  Floating IP Address: 192.168.1.231
+  Floating Network: 5676241d-6d83-40e8-9f53-36a8d196da13
+  ID: e3c3bdf8-0509-47ec-b3c6-3dc2d63f9daf
+  Port: null
+  Project: 87d22552e66446f8af89b52392e4e586

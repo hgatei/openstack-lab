@@ -1,0 +1,12 @@
+[Unit]
+Description=Persistent Cloud2 GRE Tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/lab-gre-cloud2.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

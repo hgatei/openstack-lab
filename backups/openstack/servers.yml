@@ -1,0 +1,34 @@
+- Flavor: troubleshoot.tiny
+  ID: 44926e2a-ae6c-45a5-b609-7b4a2f568036
+  Image: Ubuntu-22.04
+  Name: Troubleshoot-01
+  Networks:
+    Cloud2-Private:
+    - 10.20.20.18
+    - 192.168.1.237
+  Status: ACTIVE
+- Flavor: awx.large
+  ID: 12305e53-158f-4938-be64-d79187df6a02
+  Image: Ubuntu-22.04
+  Name: Cloud2-AWX-Console
+  Networks:
+    Cloud2-Private:
+    - 10.20.20.211
+    - 192.168.1.238
+  Status: ACTIVE
+- Flavor: m1.awx
+  ID: 5745fdfc-078b-414a-8804-2996f32ffb39
+  Image: Ubuntu-22.04
+  Name: Cloud2-AWX-APP
+  Networks:
+    Cloud2-Private:
+    - 10.20.20.7
+  Status: ACTIVE
+- Flavor: m1.small
+  ID: da6c9a38-e923-49ad-b7f2-22013c79d990
+  Image: Ubuntu-22.04
+  Name: Cloud2-Jumpstation
+  Networks:
+    Cloud2-Private:
+    - 10.20.20.53
+  Status: SHUTOFF

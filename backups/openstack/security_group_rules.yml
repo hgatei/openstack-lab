@@ -1,0 +1,180 @@
+- Direction: egress
+  Ethertype: IPv4
+  ID: 006415d3-0760-40a4-8c8f-d134acd4b75e
+  IP Protocol: null
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 40e97902-5cea-469b-8b45-ea287c4c19dc
+- Direction: ingress
+  Ethertype: IPv6
+  ID: 115296ef-8c34-4dc8-a152-be56bd72d179
+  IP Protocol: null
+  IP Range: ::/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: 9ed20c2d-e578-4b97-9710-9cc68e514f52
+  Security Group: 9ed20c2d-e578-4b97-9710-9cc68e514f52
+- Direction: ingress
+  Ethertype: IPv4
+  ID: 2961e1ff-91c1-4f08-8ce0-9cd10c665332
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: '22:22'
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: egress
+  Ethertype: IPv6
+  ID: 2f951ff7-ebc8-4375-9d1a-aa64ded24b1b
+  IP Protocol: null
+  IP Range: ::/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: 5d5d6095-7345-4d8f-be83-db7dc787e8d2
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: 8000:8000
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: egress
+  Ethertype: IPv6
+  ID: 60f28fdf-96e1-4203-bc4b-b7174d793895
+  IP Protocol: null
+  IP Range: ::/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 40e97902-5cea-469b-8b45-ea287c4c19dc
+- Direction: ingress
+  Ethertype: IPv4
+  ID: 6174dc92-ef8c-4b71-9a9d-4942e18eaeff
+  IP Protocol: null
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: 40e97902-5cea-469b-8b45-ea287c4c19dc
+  Security Group: 40e97902-5cea-469b-8b45-ea287c4c19dc
+- Direction: ingress
+  Ethertype: IPv6
+  ID: 67c43f64-a577-4ec1-a8f7-638d926fe325
+  IP Protocol: null
+  IP Range: ::/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: 8c3cb931-c4c5-496f-97c4-2f775e771df2
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: 3000:3000
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: 999106d4-4ce4-4086-bea1-107641a5eb0a
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: 9100:9100
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv6
+  ID: a1fb224f-94ee-4729-9f95-c4d38c137e0c
+  IP Protocol: null
+  IP Range: ::/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: 40e97902-5cea-469b-8b45-ea287c4c19dc
+  Security Group: 40e97902-5cea-469b-8b45-ea287c4c19dc
+- Direction: ingress
+  Ethertype: IPv4
+  ID: a52e6fc2-f675-4773-a940-b5be755f5e28
+  IP Protocol: null
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: 9ed20c2d-e578-4b97-9710-9cc68e514f52
+  Security Group: 9ed20c2d-e578-4b97-9710-9cc68e514f52
+- Direction: ingress
+  Ethertype: IPv4
+  ID: ad0024aa-201e-4cab-9c6b-7291f92c5fad
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: 32663:32663
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: b374cd7e-cfee-4f18-9237-dd32cbe9b77a
+  IP Protocol: icmp
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: c07f4701-a439-4512-9799-1d88f8a68a43
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: 8080:8080
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: d01dc912-b8b6-45ef-82eb-103cc487c2d5
+  IP Protocol: null
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: ingress
+  Ethertype: IPv4
+  ID: e584dba6-1f0d-4987-bd62-0f5fa107212a
+  IP Protocol: tcp
+  IP Range: 0.0.0.0/0
+  Port Range: 8088:8088
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: egress
+  Ethertype: IPv4
+  ID: e6a4a04a-4ba4-4e1c-b9d1-1048e3b19b91
+  IP Protocol: null
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 9ed20c2d-e578-4b97-9710-9cc68e514f52
+- Direction: egress
+  Ethertype: IPv4
+  ID: f16bf172-7276-458e-afd1-b0af9fa923b5
+  IP Protocol: null
+  IP Range: 0.0.0.0/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 5752aa80-8e49-4767-9eef-6c319fc3d8c2
+- Direction: egress
+  Ethertype: IPv6
+  ID: f7d72daf-60a2-4ba7-8b91-a1d5bd6f1225
+  IP Protocol: null
+  IP Range: ::/0
+  Port Range: ''
+  Remote Address Group: null
+  Remote Security Group: null
+  Security Group: 9ed20c2d-e578-4b97-9710-9cc68e514f52

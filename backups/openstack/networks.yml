@@ -1,0 +1,8 @@
+- ID: 4b29e0f2-46a1-4e41-82e9-22fd1e0cb473
+  Name: Cloud2-Private
+  Subnets:
+  - 55e46c68-5984-43c6-ac43-4ef1a6b87bb5
+- ID: 5676241d-6d83-40e8-9f53-36a8d196da13
+  Name: Cloud2-External
+  Subnets:
+  - f2487807-9af0-4a81-9710-950c3c1bbb10

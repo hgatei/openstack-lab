@@ -1,0 +1,6 @@
+- ID: e690e060-49dd-450f-a0eb-4d72ba7ee3e6
+  Name: Ubuntu-22.04
+  Status: active
+- ID: ed420052-0d14-4b0c-a843-1b84dfe24ec6
+  Name: cirros
+  Status: active

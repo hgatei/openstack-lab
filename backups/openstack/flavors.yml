@@ -1,0 +1,35 @@
+- Disk: 30
+  Ephemeral: 0
+  ID: 1781f774-2e98-49f8-9b69-e08236fde23b
+  Is Public: true
+  Name: m1.awx
+  RAM: 4096
+  VCPUs: 2
+- Disk: 20
+  Ephemeral: 0
+  ID: 21dda034-6038-4a68-8d91-b3a35f2af7dc
+  Is Public: true
+  Name: m1.small
+  RAM: 2048
+  VCPUs: 2
+- Disk: 5
+  Ephemeral: 0
+  ID: 8b8ae035-1f1c-48ec-9a9c-015f02f2faea
+  Is Public: true
+  Name: troubleshoot.tiny
+  RAM: 1024
+  VCPUs: 1
+- Disk: 40
+  Ephemeral: 0
+  ID: b8deea3b-3c80-4422-875c-874fa5c86464
+  Is Public: true
+  Name: m1.medium
+  RAM: 4096
+  VCPUs: 4
+- Disk: 40
+  Ephemeral: 0
+  ID: f3674430-a02a-4e09-aa26-823f249f1252
+  Is Public: true
+  Name: awx.large
+  RAM: 8192
+  VCPUs: 4

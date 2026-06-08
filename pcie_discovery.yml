@@ -1,0 +1,20 @@
+---
+- name: PCIe Discovery
+  hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Show PCI devices
+      command: lspci
+      register: pci
+
+    - debug:
+        var: pci.stdout_lines
+
+    - name: Show network interfaces
+      command: ip -br addr
+      register: net
+
+    - debug:
+        var: net.stdout_lines
