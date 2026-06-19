@@ -1,0 +1,30 @@
+---
+- name: OpenStack Service Health Check
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+
+    - name: Check Nova API
+      shell: systemctl is-active devstack@n-api || true
+      register: nova_api
+      changed_when: false
+
+    - name: Check Nova Scheduler
+      shell: systemctl is-active devstack@n-sch || true
+      register: nova_sched
+      changed_when: false
+
+    - name: Check Neutron
+      shell: systemctl is-active devstack@q-svc || true
+      register: neutron
+      changed_when: false
+
+    - name: Display status
+      debug:
+        msg:
+          - "Host: {{ inventory_hostname }}"
+          - "Nova API: {{ nova_api.stdout }}"
+          - "Nova Scheduler: {{ nova_sched.stdout }}"
+          - "Neutron: {{ neutron.stdout }}"
