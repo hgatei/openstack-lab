@@ -7,22 +7,22 @@
     netbox_url: "http://10.20.20.21:8080"
     netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX"
 
+    lab_devices:
+      - name: Cloud2-AWX-Console
+        site: Cloud2
+        ip: 10.20.20.211/24
+      - name: Cloud2-AWX-APP
+        site: Cloud2
+        ip: 10.20.20.7/24
+      - name: Cloud2-Jumpstation
+        site: Cloud2
+        ip: 10.20.20.53/24
+      - name: Jumpstation-Ubuntu
+        site: Cloud1
+        ip: 10.10.10.199/24
+
   tasks:
-
-    - name: Create HomeLab site
-      uri:
-        url: "{{ netbox_url }}/api/dcim/sites/"
-        method: POST
-        headers:
-          Authorization: "Token {{ netbox_token }}"
-          Content-Type: "application/json"
-        body_format: json
-        body:
-          name: HomeLab
-          slug: homelab
-        status_code: [201,400]
-
-    - name: Create openstack device
+    - name: Create lab VM devices
       uri:
         url: "{{ netbox_url }}/api/dcim/devices/"
         method: POST
@@ -31,26 +31,13 @@
           Content-Type: "application/json"
         body_format: json
         body:
-          name: openstack
-          site: HomeLab
+          name: "{{ item.name }}"
+          site: "{{ item.site }}"
           status: active
         status_code: [201,400]
+      loop: "{{ lab_devices }}"
 
-    - name: Create openstack-lab2 device
-      uri:
-        url: "{{ netbox_url }}/api/dcim/devices/"
-        method: POST
-        headers:
-          Authorization: "Token {{ netbox_token }}"
-          Content-Type: "application/json"
-        body_format: json
-        body:
-          name: openstack-lab2
-          site: HomeLab
-          status: active
-        status_code: [201,400]
-
-    - name: Create openstack management IP
+    - name: Create lab VM IP addresses
       uri:
         url: "{{ netbox_url }}/api/ipam/ip-addresses/"
         method: POST
@@ -59,19 +46,7 @@
           Content-Type: "application/json"
         body_format: json
         body:
-          address: "192.168.1.176/24"
+          address: "{{ item.ip }}"
           status: active
         status_code: [201,400]
-
-    - name: Create openstack-lab2 management IP
-      uri:
-        url: "{{ netbox_url }}/api/ipam/ip-addresses/"
-        method: POST
-        headers:
-          Authorization: "Token {{ netbox_token }}"
-          Content-Type: "application/json"
-        body_format: json
-        body:
-          address: "192.168.1.178/24"
-          status: active
-        status_code: [201,400]
+      loop: "{{ lab_devices }}"
