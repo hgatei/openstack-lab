@@ -5,7 +5,7 @@
 
   vars:
     netbox_url: "http://10.20.20.21:8080"
-    netbox_token: "YOUR_WORKING_TOKEN"
+    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX"
 
   tasks:
 
