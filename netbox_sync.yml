@@ -1,11 +1,11 @@
 ---
 - name: Sync OpenStack lab into NetBox
   hosts: localhost
-  gather_facts: false
+  gather_facts: no
 
   vars:
     netbox_url: "http://10.20.20.21:8080"
-    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX"
+    netbox_token: "YOUR_WORKING_TOKEN"
 
   tasks:
 
@@ -20,7 +20,7 @@
         body:
           name: HomeLab
           slug: homelab
-        status_code: [200,201,400]
+        status_code: [201,400]
 
     - name: Create openstack device
       uri:
@@ -32,8 +32,9 @@
         body_format: json
         body:
           name: openstack
-          site: 1
-        status_code: [200,201,400]
+          site: HomeLab
+          status: active
+        status_code: [201,400]
 
     - name: Create openstack-lab2 device
       uri:
@@ -45,5 +46,32 @@
         body_format: json
         body:
           name: openstack-lab2
-          site: 1
-        status_code: [200,201,400]
+          site: HomeLab
+          status: active
+        status_code: [201,400]
+
+    - name: Create openstack management IP
+      uri:
+        url: "{{ netbox_url }}/api/ipam/ip-addresses/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          address: "192.168.1.176/24"
+          status: active
+        status_code: [201,400]
+
+    - name: Create openstack-lab2 management IP
+      uri:
+        url: "{{ netbox_url }}/api/ipam/ip-addresses/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          address: "192.168.1.178/24"
+          status: active
+        status_code: [201,400]
