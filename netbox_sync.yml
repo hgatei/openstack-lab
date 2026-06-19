@@ -1,0 +1,49 @@
+---
+- name: Sync OpenStack lab into NetBox
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    netbox_url: "http://10.20.20.21:8080"
+    netbox_token: "YOUR_NETBOX_TOKEN"
+
+  tasks:
+
+    - name: Create HomeLab site
+      uri:
+        url: "{{ netbox_url }}/api/dcim/sites/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          name: HomeLab
+          slug: homelab
+        status_code: [200,201,400]
+
+    - name: Create openstack device
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          name: openstack
+          site: 1
+        status_code: [200,201,400]
+
+    - name: Create openstack-lab2 device
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          name: openstack-lab2
+          site: 1
+        status_code: [200,201,400]
