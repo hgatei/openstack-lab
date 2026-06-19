@@ -1,0 +1,17 @@
+---
+- name: Gather system facts
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Display OS, CPU, memory, and disk summary
+      ansible.builtin.debug:
+        msg:
+          hostname: "{{ ansible_hostname }}"
+          fqdn: "{{ ansible_fqdn }}"
+          os: "{{ ansible_distribution }} {{ ansible_distribution_version }}"
+          kernel: "{{ ansible_kernel }}"
+          cpu_cores: "{{ ansible_processor_vcpus }}"
+          memory_mb: "{{ ansible_memtotal_mb }}"
+          root_disk_total: "{{ ansible_mounts | selectattr('mount', 'equalto', '/') | map(attribute='size_total') | first | human_readable }}"
+          root_disk_available: "{{ ansible_mounts | selectattr('mount', 'equalto', '/') | map(attribute='size_available') | first | human_readable }}"
