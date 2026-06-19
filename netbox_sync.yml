@@ -50,3 +50,21 @@
           status: active
         status_code: [201,400]
       loop: "{{ lab_devices }}"
+       - name: Create interfaces for openstack
+      uri:
+        url: "{{ netbox_url }}/api/dcim/interfaces/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          device: "openstack"
+          name: "{{ item }}"
+          type: virtual
+          enabled: true
+        status_code: [201,400]
+      loop:
+        - br-ex
+        - br-int
+        - gre-cloud1
