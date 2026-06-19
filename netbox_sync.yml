@@ -26,6 +26,11 @@
       - br-int
       - gre-cloud1
 
+    openstack_lab2_interfaces:
+      - br-ex
+      - br-int
+      - gre-cloud2
+
   tasks:
     - name: Create lab VM devices
       uri:
@@ -71,3 +76,19 @@
           enabled: true
         status_code: [201, 400]
       loop: "{{ openstack_interfaces }}"
+
+    - name: Create interfaces for openstack-lab2
+      uri:
+        url: "{{ netbox_url }}/api/dcim/interfaces/"
+        method: POST
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          device: 5
+          name: "{{ item }}"
+          type: virtual
+          enabled: true
+        status_code: [201, 400]
+      loop: "{{ openstack_lab2_interfaces }}"
