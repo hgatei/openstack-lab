@@ -1,26 +1,21 @@
 ---
-- name: Update NetBox with lab devices
+- name: Update NetBox
   hosts: localhost
   gather_facts: false
 
   vars:
     netbox_url: "http://10.20.20.21:8080"
-    netbox_token: "{{ lookup('env', 'NETBOX_TOKEN') }}"
+    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX"
 
   tasks:
-    - name: Create HomeLab site
-      ansible.builtin.uri:
-        url: "{{ netbox_url }}/api/dcim/sites/"
-        method: POST
+    - name: Test NetBox API
+      uri:
+        url: "{{ netbox_url }}/api/"
+        method: GET
         headers:
           Authorization: "Token {{ netbox_token }}"
-          Content-Type: "application/json"
-        body_format: json
-        body:
-          name: "HomeLab"
-          slug: "homelab"
-        status_code: [200, 201, 400]
+        return_content: yes
+      register: result
 
-    - name: Show result
-      ansible.builtin.debug:
-        msg: "NetBox HomeLab site check complete"
+    - debug:
+        var: result.status
