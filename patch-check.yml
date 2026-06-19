@@ -1,0 +1,20 @@
+---
+- name: Ubuntu patch check only
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Update apt cache only
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: List available package upgrades
+      ansible.builtin.command: apt list --upgradable
+      register: upgrade_list
+      changed_when: false
+
+    - name: Show upgrade summary
+      ansible.builtin.debug:
+        msg: "{{ upgrade_list.stdout_lines }}"
