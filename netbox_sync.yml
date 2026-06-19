@@ -5,8 +5,7 @@
 
   vars:
     netbox_url: "http://10.20.20.21:8080"
-    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX
-Token {{ netbox_token }}"
+    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX"
 
     lab_devices:
       - name: Cloud2-AWX-Console
