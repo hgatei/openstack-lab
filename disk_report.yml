@@ -1,0 +1,14 @@
+---
+- name: Disk Usage Report
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Show root filesystem disk usage
+      ansible.builtin.command: df -h /
+      register: disk_output
+      changed_when: false
+
+    - name: Display disk report
+      ansible.builtin.debug:
+        msg: "{{ disk_output.stdout_lines }}"
