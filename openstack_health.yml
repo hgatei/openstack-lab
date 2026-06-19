@@ -5,26 +5,27 @@
   gather_facts: no
 
   tasks:
-
     - name: Check Nova API
-      shell: systemctl is-active devstack@n-api || true
+      ansible.builtin.shell: systemctl is-active devstack@n-api || true
       register: nova_api
       changed_when: false
 
     - name: Check Nova Scheduler
-      shell: systemctl is-active devstack@n-sch || true
+      ansible.builtin.shell: systemctl is-active devstack@n-sch || true
       register: nova_sched
       changed_when: false
 
-    - name: Check Neutron
-      shell: systemctl is-active devstack@q-svc || true
-      register: neutron
+    - name: Check Neutron services
+      ansible.builtin.shell: |
+        systemctl list-units "devstack@neutron-*" "devstack@q-*" --type=service --no-pager --plain | awk '/devstack@/ {print $1, $3, $4}'
+      register: neutron_services
       changed_when: false
 
-    - name: Display status
-      debug:
+    - name: Display OpenStack health status
+      ansible.builtin.debug:
         msg:
           - "Host: {{ inventory_hostname }}"
           - "Nova API: {{ nova_api.stdout }}"
           - "Nova Scheduler: {{ nova_sched.stdout }}"
-          - "Neutron: {{ neutron.stdout }}"
+          - "Neutron/OVN Services:"
+          - "{{ neutron_services.stdout_lines }}"
