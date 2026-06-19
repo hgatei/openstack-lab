@@ -5,7 +5,8 @@
 
   vars:
     netbox_url: "http://10.20.20.21:8080"
-    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX"
+    netbox_token: "nbt_xtSHREV88CqJ.YibtGGdeAzWlbqlFsjJVuYWkmJsX1MA1qk1JBTZX
+Token {{ netbox_token }}"
 
     lab_devices:
       - name: Cloud2-AWX-Console
@@ -21,6 +22,11 @@
         site: Cloud1
         ip: 10.10.10.199/24
 
+    openstack_interfaces:
+      - br-ex
+      - br-int
+      - gre-cloud1
+
   tasks:
     - name: Create lab VM devices
       uri:
@@ -34,7 +40,7 @@
           name: "{{ item.name }}"
           site: "{{ item.site }}"
           status: active
-        status_code: [201,400]
+        status_code: [201, 400]
       loop: "{{ lab_devices }}"
 
     - name: Create lab VM IP addresses
@@ -48,9 +54,10 @@
         body:
           address: "{{ item.ip }}"
           status: active
-        status_code: [201,400]
+        status_code: [201, 400]
       loop: "{{ lab_devices }}"
-       - name: Create interfaces for openstack
+
+    - name: Create interfaces for openstack
       uri:
         url: "{{ netbox_url }}/api/dcim/interfaces/"
         method: POST
@@ -63,8 +70,5 @@
           name: "{{ item }}"
           type: virtual
           enabled: true
-        status_code: [201,400]
-      loop:
-        - br-ex
-        - br-int
-        - gre-cloud1
+        status_code: [201, 400]
+      loop: "{{ openstack_interfaces }}"
